@@ -1,0 +1,53 @@
+1. Topology
+
+Devices:
+2x Cisco 2960 Switches (Switch0, Switch1)
+1x PC (PC0)
+Connections:
+Connect PC0 to Switch0.
+Connect Switch0 to Switch1 using a straight-through cable.
+2. Switch0 Configuration
+
+!
+! Switch0 Configuration
+!
+
+interface FastEthernet0/1 
+ switchport mode access 
+ switchport access vlan 10
+
+!
+3. Switch1 Configuration
+
+!
+! Switch1 Configuration
+!
+
+interface FastEthernet0/1 
+ switchport mode access 
+ switchport access vlan 10
+
+!
+4. PC0 Configuration
+
+IP Configuration:
+Method: DHCP
+5. Verification
+
+Check PC0 IP Address:
+Open a command prompt on PC0.
+Type ipconfig and press Enter.
+Verify that PC0 has received an IP address from the DHCP server.
+Explanation
+
+VLAN 10: Both switches are configured with a single VLAN (VLAN 10) on the relevant interfaces. This ensures that all devices on the network belong to the same broadcast domain.
+DHCP on PC0: The PC is configured to obtain its IP address dynamically using DHCP.
+DHCP Server (Implicit): In this simplified example, we assume that a DHCP server is already present on the network (e.g., a router or a dedicated DHCP server). The PC will automatically request an IP address from this server.
+Note:
+
+This is a basic example. In real-world scenarios, you would typically configure a dedicated DHCP server (e.g., a router or a server running DHCP software) to provide IP addresses to network devices.
+You can adjust the VLAN ID and other parameters as needed for your specific network requirements.
+Disclaimer:
+
+This configuration is for educational purposes and may require adjustments for specific network environments.
+Always follow safety precautions and best practices when configuring network devices.
